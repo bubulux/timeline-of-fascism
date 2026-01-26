@@ -4,6 +4,9 @@ import {
   type MantineColorsTuple,
 } from "@mantine/core";
 
+import { RouterProvider } from "react-router-dom";
+import { router } from "./router.tsx";
+
 import "@mantine/core/styles.css";
 
 const myColor: MantineColorsTuple = [
@@ -29,7 +32,7 @@ const theme = createTheme({
 export default function App() {
   return (
     <MantineProvider theme={theme} defaultColorScheme="dark">
-      Hello World
+      <RouterProvider router={router} />
     </MantineProvider>
   );
 }

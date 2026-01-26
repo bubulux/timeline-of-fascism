@@ -2,9 +2,17 @@ export type TEvent = {
   title: string;
   date: string;
   time?: string;
-  description: string;
+  cover?: string;
+  parapgraphs?: string[];
+  media?: {
+    type: "image" | "video";
+    src: string;
+    title: string;
+    description?: string;
+  }[];
   sources: string[];
   country: "germany" | "usa";
+  alternativeFlag?: string;
 };
 
 export type TYear = {

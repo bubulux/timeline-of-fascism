@@ -1,7 +1,7 @@
 import matter from "gray-matter";
 import { Event, EventFrontmatter, DatePrecision } from "@/types/event";
 
-const eventFiles = import.meta.glob("/src/content/events/**/*.md", {
+const eventFiles = import.meta.glob("../content/events/**/*.md", {
   eager: true,
   query: "?raw",
   import: "default",
@@ -43,7 +43,10 @@ function extractSlugFromPath(path: string): string {
 export function loadEvents(): Event[] {
   const events: Event[] = [];
 
+  console.log("Event files found:", Object.keys(eventFiles));
+
   for (const [path, content] of Object.entries(eventFiles)) {
+    console.log("Loading event from:", path);
     const { data, content: markdownContent } = matter(content as string);
     const frontmatter = data as EventFrontmatter;
 

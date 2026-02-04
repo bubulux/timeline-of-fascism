@@ -10,6 +10,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "buffer": "^6.0.3",
     "date-fns": "^3.0.6",
     "gray-matter": "^4.0.3",
     "react": "^18.2.0",
